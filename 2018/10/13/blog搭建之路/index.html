@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans.yml">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="这里记录我搭建blog 的全过程！">
+<meta name="keywords" content="blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog搭建之路">
+<meta property="og:url" content="http://yoursite.com/2018/10/13/blog搭建之路/index.html">
+<meta property="og:site_name" content="Stormyang">
+<meta property="og:description" content="这里记录我搭建blog 的全过程！">
+<meta property="og:locale" content="zh-Hans.yml">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw57i4g7orj30zq0p6dgu.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw57secbiej30i2022a9w.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw581t6ea2j30vi05ot96.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-fac8f8564c4f1de0c54e3c142ae1f81d_hd.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2859254-01cb597e80e5005b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/990/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2859254-67ed8c22531dd66d.png?imageMogr2/auto-orient/">
+<meta property="og:updated_time" content="2018-10-31T08:52:09.972Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="blog搭建之路">
+<meta name="twitter:description" content="这里记录我搭建blog 的全过程！">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw57i4g7orj30zq0p6dgu.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/13/blog搭建之路/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>blog搭建之路 | Stormyang</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans.yml">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Stormyang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Technology is changing our life!</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/13/blog搭建之路/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stormyang">
+      <meta itemprop="description" content="Record my experiences.">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Stormyang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">blog搭建之路
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-13 11:50:49" itemprop="dateCreated datePublished" datetime="2018-10-13T11:50:49+08:00">2018-10-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-31 16:52:09" itemprop="dateModified" datetime="2018-10-31T16:52:09+08:00">2018-10-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/搭建blog/" itemprop="url" rel="index"><span itemprop="name">搭建blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这里记录我搭建blog 的全过程！<br><a id="more"></a></p>
+<h1 id="我为什么选择搭建一个自己的blog？"><a href="#我为什么选择搭建一个自己的blog？" class="headerlink" title="我为什么选择搭建一个自己的blog？"></a>我为什么选择搭建一个自己的blog？</h1><ol>
+<li>给自己找一个可以输出的地方，督促自己的输入。</li>
+<li>选择github是因为喜欢这里，这里是你需要去挖掘的宝藏<br>···<h1 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h1><h2 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h2></li>
+</ol>
+<ul>
+<li>电脑<h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2></li>
+</ul>
+<ol>
+<li>GitHub 账号</li>
+<li>Git</li>
+<li>Node.js</li>
+<li>npm</li>
+<li>hexo <h2 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h2></li>
+</ol>
+<h3 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h3><p>mac  下自带git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git -- version \\ 查询版本</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></h3><p>安装Node.js 的过程也会安装npm<br><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw57i4g7orj30zq0p6dgu.jpg" alt=""></p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo \\ 安装</span><br><span class="line">hexo -v			  \\版本</span><br></pre></td></tr></table></figure>
+<h3 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>在部署blog 前 需要安装依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw57secbiej30i2022a9w.jpg" alt=""><br>看图提示就可以看自己的本地blog 了</p>
+<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><h3 id="创建账号"><a href="#创建账号" class="headerlink" title="创建账号"></a>创建账号</h3><p>后期补上</p>
+<h3 id="创建-repository"><a href="#创建-repository" class="headerlink" title="创建 repository"></a>创建 repository</h3><ol>
+<li>登录 GitHub 个人账号以后，在首页右上角会有 New repository 按钮，点击按钮&gt;    会出现下图所示界面：![](<a href="https://ws4.sinaimg.cn/large/006tNbRwly1fw57xa5r8jj31480ywgmp.jpg）" target="_blank" rel="noopener">https://ws4.sinaimg.cn/large/006tNbRwly1fw57xa5r8jj31480ywgmp.jpg）</a></li>
+<li>Repository name 的格式必须是：yourGitHubId.github.io，例如我的是：lijiank    un24.github.io；</li>
+<li>Description 可以为空；</li>
+<li>免费服务的话，只能选择 Public (公开的)</li>
+</ol>
+<h3 id="安装git-部署器"><a href="#安装git-部署器" class="headerlink" title="安装git  部署器"></a>安装git  部署器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>在 hexo 的根目录下会有 _config.yml 文件，打开 _config.yml 文件，在文件最末 ，修改如下配置：<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw581t6ea2j30vi05ot96.jpg" alt=""></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p> 在 hexo 目录下执行以下命令， 即可完成对将静态博客部署到 GitHub 上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>部署成功以后，浏览器中输入 <a href="http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a> 即可在线浏览自己的博客了</p>
+<h2 id="备份本地blog"><a href="#备份本地blog" class="headerlink" title="备份本地blog"></a>备份本地blog</h2><h3 id="为什么需要备份呢？"><a href="#为什么需要备份呢？" class="headerlink" title="为什么需要备份呢？"></a>为什么需要备份呢？</h3><ol>
+<li>万一自己换电脑呢？</li>
+<li><p>万一本地blog 丢失呢？ 你要明白我们上传的多是处理过的静态html</p>
+<h3 id="方法一-远程仓库创建分支"><a href="#方法一-远程仓库创建分支" class="headerlink" title="方法一 远程仓库创建分支"></a>方法一 远程仓库创建分支</h3><p><img src="https://pic2.zhimg.com/80/v2-fac8f8564c4f1de0c54e3c142ae1f81d_hd.png" alt=""></p>
+<h4 id="仓库创建hexo分支-并设置默认分支"><a href="#仓库创建hexo分支-并设置默认分支" class="headerlink" title="仓库创建hexo分支 并设置默认分支"></a>仓库创建hexo分支 并设置默认分支</h4><blockquote>
+<p>在Github的username.github.io仓库上新建一个xxx分支，并切换到该分支，并在该仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存；然后将该仓库克隆到本地，进入该username.github.io文件目录。<br><img src="https://upload-images.jianshu.io/upload_images/2859254-01cb597e80e5005b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/990/format/webp" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/2859254-67ed8c22531dd66d.png?imageMogr2/auto-orient/" alt=""></p>
+</blockquote>
+<h4 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入刚才clone 的仓库 将<code>.git</code>复制到blog 根目录</p>
+</li>
+<li>将博客目录下<code>themes</code>文件夹下每个主题文件夹离面的<code>.git,.gitignor</code>删掉。如果不删除么有办法备份该文件夹。<br>3.<code>cd</code>到博客目录，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit -m &quot;modify my blog&quot;</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样就可以把blog 更新到<code>hexo</code>分支里面</p>
+<ol start="4">
+<li><p>在新电脑上操作 先把电脑上环境安装好 创建好<code>blog</code>目录 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>cd</code>到<code>blog</code> 下执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install </span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>便可<br><code>`</code></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/13/搭建blog遇到的坑/" rel="prev" title="搭建blog遇到的坑">
+                搭建blog遇到的坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="stormyang" />
+            
+              <p class="site-author-name" itemprop="name">stormyang</p>
+              <p class="site-description motion-element" itemprop="description">Record my experiences.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我为什么选择搭建一个自己的blog？"><span class="nav-number">1.</span> <span class="nav-text">我为什么选择搭建一个自己的blog？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建准备"><span class="nav-number">2.</span> <span class="nav-text">搭建准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件环境"><span class="nav-number">2.1.</span> <span class="nav-text">硬件环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件环境"><span class="nav-number">2.2.</span> <span class="nav-text">软件环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地搭建"><span class="nav-number">2.3.</span> <span class="nav-text">本地搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-git"><span class="nav-number">2.3.1.</span> <span class="nav-text">安装 git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.3.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.3.3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化hexo"><span class="nav-number">2.3.4.</span> <span class="nav-text">初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.3.5.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态页面"><span class="nav-number">2.3.6.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务"><span class="nav-number">2.3.7.</span> <span class="nav-text">启动服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到GitHub"><span class="nav-number">2.4.</span> <span class="nav-text">部署到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建账号"><span class="nav-number">2.4.1.</span> <span class="nav-text">创建账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-repository"><span class="nav-number">2.4.2.</span> <span class="nav-text">创建 repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git-部署器"><span class="nav-number">2.4.3.</span> <span class="nav-text">安装git  部署器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-number">2.4.4.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">2.4.5.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份本地blog"><span class="nav-number">2.5.</span> <span class="nav-text">备份本地blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要备份呢？"><span class="nav-number">2.5.1.</span> <span class="nav-text">为什么需要备份呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-远程仓库创建分支"><span class="nav-number">2.5.2.</span> <span class="nav-text">方法一 远程仓库创建分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#仓库创建hexo分支-并设置默认分支"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">仓库创建hexo分支 并设置默认分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#克隆远程仓库"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">克隆远程仓库</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stormyang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
